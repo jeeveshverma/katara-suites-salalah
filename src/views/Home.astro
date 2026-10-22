@@ -26,7 +26,7 @@ const heroImg = await getImage({ src: heroSrc, widths: [420, 600, 800, 940], for
 const facts = [t('facts.street'), t('facts.centre'), t('facts.stays'), t('facts.reply')];
 const whys = ['clean', 'host', 'location', 'kitchen', 'parking', 'wifi'] as const;
 const whyIcon = { clean: 'towel', host: 'users', location: 'pin', kitchen: 'kitchen', parking: 'parking', wifi: 'wifi' } as const;
-const strip = ['living-tv', 'double-bed', 'kitchen', 'twin-beds', 'living-art', 'bathroom', 'kitchenette'];
+const strip = ['living-tv', 'double-wide', 'exterior', 'twin-front', 'kitchen-full', 'living-window', 'bathroom-wide', 'reception', 'double-runner', 'kitchenette', 'twin-tv', 'lobby'];
 const teaser = ['haffa', 'souq', 'darbat', 'mughsail'].map((id) => PLACES.find((p) => p.id === id)!).map((p) => { const g = fromHotel(p.at); return { ...p, kmText: fmtKm(g.km, lang), mins: g.mode === 'foot' ? t('salalah.onFoot', { min: g.min }) : t('salalah.byCar', { min: g.min }) }; });
 ---
 <Layout lang={lang} page="home" title={t('meta.home.title')} desc={t('meta.home.desc')} overHero preload={{ href: heroImg.src, srcset: heroImg.srcSet.attribute, sizes: HERO_SIZES }}>
@@ -66,7 +66,7 @@ const teaser = ['haffa', 'souq', 'darbat', 'mughsail'].map((id) => PLACES.find((
         <p class="lead">{t('rooms.intro')}</p>
       </div>
       <div class="rooms-grid">
-        {ROOMS.slice(0, 3).map((r, i) => <RoomCard id={r.id} hero={r.hero} lang={lang} index={i} size={i === 1 ? 'wide' : 'tall'} />)}
+        {ROOMS.map((r, i) => <RoomCard id={r.id} hero={r.hero} lang={lang} index={i} size={i % 2 === 1 ? 'wide' : 'tall'} />)}
       </div>
       <p class="rooms-all rv"><a class="btn btn-gold" href={path(lang, 'rooms')}>{t('rooms.all')} <Icon name="arrowRight" size={18} class="rtl-flip" /></a></p>
     </div>
@@ -92,8 +92,8 @@ const teaser = ['haffa', 'souq', 'darbat', 'mughsail'].map((id) => PLACES.find((
         </dl>
       </div>
       <div class="why-photos">
-        <div class="frame rv"><Img id="living-art" lang={lang} ratio="4 / 5" sizes="(min-width: 960px) 34vw, 70vw" /></div>
-        <div class="frame rv rv-d2"><Img id="bathroom" lang={lang} ratio="1 / 1" sizes="(min-width: 960px) 20vw, 45vw" /></div>
+        <div class="frame rv"><Img id="exterior" lang={lang} ratio="4 / 3" sizes="(min-width: 960px) 34vw, 70vw" /></div>
+        <div class="frame rv rv-d2"><Img id="window-mall" lang={lang} ratio="1 / 1" sizes="(min-width: 960px) 20vw, 45vw" /></div>
       </div>
     </div>
   </section>
@@ -107,7 +107,7 @@ const teaser = ['haffa', 'souq', 'darbat', 'mughsail'].map((id) => PLACES.find((
         <h2>{t('renovation.title')}</h2>
         <p class="lead">{t('renovation.text')}</p>
       </div>
-      <div class="reno-photo reno-b rv rv-d2"><Img id="kitchen" lang={lang} ratio="4 / 3" sizes="(min-width: 960px) 38vw, 80vw" /><p class="caption">{t('renovation.captionStairs')}</p></div>
+      <div class="reno-photo reno-b rv rv-d2"><Img id="kitchen-full" lang={lang} ratio="4 / 3" sizes="(min-width: 960px) 38vw, 80vw" /><p class="caption">{t('renovation.captionStairs')}</p></div>
     </div>
   </section>
 
@@ -217,7 +217,8 @@ const teaser = ['haffa', 'souq', 'darbat', 'mughsail'].map((id) => PLACES.find((
     .rooms-grid { grid-template-columns: repeat(12, 1fr); gap: 32px; align-items: start; }
     .rooms-grid > :global(:nth-child(1)) { grid-column: 1 / 6; }
     .rooms-grid > :global(:nth-child(2)) { grid-column: 7 / 13; margin-top: 96px; }
-    .rooms-grid > :global(:nth-child(3)) { grid-column: 3 / 8; margin-top: -24px; }
+    .rooms-grid > :global(:nth-child(3)) { grid-column: 2 / 7; margin-top: -24px; }
+    .rooms-grid > :global(:nth-child(4)) { grid-column: 8 / 13; margin-top: 72px; }
   }
 
   .why { display: grid; gap: 40px; }

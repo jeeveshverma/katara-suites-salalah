@@ -18,11 +18,13 @@ export const SITE = {
   /** Google's listing by its CID (feature id 0xbc621ec6ecb47c25 in decimal). */
   mapsUrl: 'https://maps.google.com/?cid=13574446066571705381',
   directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=17.021212,54.067734',
-  /** The phone on the Google listing; also used for WhatsApp until the owner says otherwise. */
+  /** The phone on the Google listing; the owner confirmed it as the WhatsApp number (2026-10-22). */
   whatsapp: '96891477727',
   whatsappDisplay: '+968 9147 7727',
   phone: '+96891477727',
   phoneDisplay: '+968 9147 7727',
+  instagram: 'katara.suites',
+  instagramUrl: 'https://www.instagram.com/katara.suites/',
   googleReviewsUrl: 'https://maps.google.com/?cid=13574446066571705381',
   bookingUrl: 'https://www.booking.com/hotel/om/jnh-ktr-sll.en-gb.html',
   /** Guest scores as published on 2026-10-22, shown on the site by the owner's choice. */
@@ -30,18 +32,24 @@ export const SITE = {
     google: { score: '4.5', outOf: '5', count: 17 },
     booking: { score: '9.1', outOf: '10', count: 16 },
   },
-  /** Khareef (monsoon) season window used by the date-aware ribbon. Month is 1-based. */
-  khareef: { start: { month: 6, day: 21 }, end: { month: 9, day: 21 } },
+  /** Khareef (monsoon) season window used by the date-aware ribbon, as the owner states it: late June to the end of August. Month is 1-based. */
+  khareef: { start: { month: 6, day: 21 }, end: { month: 8, day: 31 } },
 } as const;
 
-export type RoomId = 'double' | 'twin';
+export type RoomId = 'suite' | 'apartment' | 'studio' | 'deluxe';
+
+export type Amenity = 'sofa' | 'livingArea' | 'kitchen' | 'kitchenette' | 'washer' | 'ac' | 'wifi' | 'tv' | 'parking';
 
 /**
- * Suite *styles*: what the listing photos show, not an inventory. Every suite has a sitting room,
- * a kitchen and a bathroom; they differ by the bedroom. Provisional until the owner confirms the
- * layouts. Photo ids refer to src/data/photos.ts.
+ * The four unit types, as the owner listed them on 2026-10-22: a suite (two bedrooms, sitting
+ * room, kitchen, two bathrooms), a one-bedroom apartment (bedroom, sitting room, kitchen,
+ * bathroom), a studio (room, living area, bathroom) and a deluxe room (room, kitchenette,
+ * bathroom). Which photo shows which unit is read from the photos, not confirmed. Photo ids
+ * refer to src/data/photos.ts; the first non-bathroom photos pair with the walk-through steps.
  */
-export const ROOMS: { id: RoomId; photos: string[]; hero: string }[] = [
-  { id: 'double', hero: 'double-bed', photos: ['double-bed', 'living-tv', 'kitchen', 'bathroom'] },
-  { id: 'twin', hero: 'twin-beds', photos: ['twin-beds', 'living-art', 'kitchenette', 'bathroom'] },
+export const ROOMS: { id: RoomId; photos: string[]; hero: string; amenities: Amenity[] }[] = [
+  { id: 'suite', hero: 'living-wide', photos: ['living-wide', 'double-wide', 'twin-front', 'kitchen-full', 'bathroom-wide', 'bathroom-shower'], amenities: ['sofa', 'kitchen', 'washer', 'ac', 'wifi', 'tv', 'parking'] },
+  { id: 'apartment', hero: 'double-front', photos: ['double-front', 'living-tv-on', 'kitchenette', 'bathroom'], amenities: ['sofa', 'kitchen', 'ac', 'wifi', 'tv', 'parking'] },
+  { id: 'studio', hero: 'twin-tv', photos: ['twin-tv', 'living-window', 'bathroom-window'], amenities: ['livingArea', 'ac', 'wifi', 'tv', 'parking'] },
+  { id: 'deluxe', hero: 'double-runner', photos: ['double-runner', 'minibar', 'bathroom-basin'], amenities: ['kitchenette', 'ac', 'wifi', 'tv', 'parking'] },
 ];

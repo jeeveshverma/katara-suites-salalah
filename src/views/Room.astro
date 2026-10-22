@@ -4,7 +4,7 @@ import Img from '../components/Img.astro';
 import Icon from '../components/Icon.astro';
 import Filmstrip from '../components/Filmstrip.astro';
 import { path, useT, digits, type Lang } from '../i18n';
-import { ROOMS, SITE } from '../data/site';
+import { ROOMS, SITE, type Amenity } from '../data/site';
 import { photo } from '../data/photos';
 import { waUrl } from '../lib/wa';
 import en from '../i18n/en.json';
@@ -20,15 +20,15 @@ const walkPhotos = room.photos.filter((p) => photo(p).group !== 'bathroom').conc
 const walk = steps.map((s, i) => ({ text: s, photo: walkPhotos[Math.min(i, walkPhotos.length - 1)] }));
 const others = ROOMS.filter((r) => r.id !== id);
 const wa = waUrl(`${t('enquire.waIntro')} ${t('enquire.waRoom')}: ${name}.`);
-const amen = [
-  { icon: 'sofa', key: 'sofa' }, { icon: 'kitchen', key: 'kitchen' }, { icon: 'ac', key: 'ac' }, { icon: 'wifi', key: 'wifi' }, { icon: 'tv', key: 'tv' }, { icon: 'parking', key: 'parking' },
-] as const;
-const amenLabel: Record<string, { en: string; ar: string }> = {
-  sofa: { en: 'Separate sitting room', ar: 'غرفة جلوس منفصلة' }, kitchen: { en: 'Kitchen or kitchenette', ar: 'مطبخ أو مطبخ صغير' }, ac: { en: 'Air conditioning', ar: 'تكييف' }, wifi: { en: 'Free Wi‑Fi', ar: 'واي فاي مجاني' }, tv: { en: 'Smart TV', ar: 'تلفاز ذكي' }, parking: { en: 'Free parking', ar: 'موقف مجاني' },
+// amenities per unit type come from site.ts; the icon and label for each key live here
+const amenIcon = { sofa: 'sofa', livingArea: 'sofa', kitchen: 'kitchen', kitchenette: 'kettle', washer: 'washer', ac: 'ac', wifi: 'wifi', tv: 'tv', parking: 'parking' } as const;
+const amenLabel: Record<Amenity, { en: string; ar: string }> = {
+  sofa: { en: 'Separate sitting room', ar: 'صالة جلوس منفصلة' }, livingArea: { en: 'Living area', ar: 'ركن جلوس' }, kitchen: { en: 'Kitchen with washing machine', ar: 'مطبخ مع غسالة' }, kitchenette: { en: 'Kitchenette: kettle and fridge', ar: 'مطبخ صغير: غلاية وثلاجة' }, washer: { en: 'Washing machine', ar: 'غسالة ملابس' }, ac: { en: 'Air conditioning', ar: 'تكييف' }, wifi: { en: 'Free Wi‑Fi', ar: 'واي فاي مجاني' }, tv: { en: 'Smart TV', ar: 'تلفاز ذكي' }, parking: { en: 'Free parking', ar: 'موقف مجاني' },
 };
+const amen = room.amenities.map((key) => ({ key, icon: amenIcon[key] }));
 const abs = (p: string) => new URL(p, SITE.url + '/').href;
 const jsonld = [
-  { '@context': 'https://schema.org', '@type': 'Suite', name: `${name} — ${SITE.name.en}`, description: t(`rooms.${id}.desc`), containedInPlace: { '@id': `${SITE.url}/#hotel` } },
+  { '@context': 'https://schema.org', '@type': id === 'suite' || id === 'apartment' ? 'Suite' : 'HotelRoom', name: `${name} — ${SITE.name.en}`, description: t(`rooms.${id}.desc`), containedInPlace: { '@id': `${SITE.url}/#hotel` } },
   { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [
     { '@type': 'ListItem', position: 1, name: t('nav.home'), item: abs(path(lang, 'home')) },
     { '@type': 'ListItem', position: 2, name: t('nav.rooms'), item: abs(path(lang, 'rooms')) },

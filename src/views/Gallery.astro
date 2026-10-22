@@ -9,11 +9,11 @@ import { waUrl } from '../lib/wa';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const { t } = useT(lang);
-// strip order: sitting rooms, bedrooms, kitchens, bathrooms — the walk a guest would take
-const order = ['living', 'double', 'twin', 'kitchen', 'bathroom'];
+// strip order: the building, then sitting rooms, bedrooms, kitchens, bathrooms — the walk a guest would take
+const order = ['building', 'living', 'double', 'twin', 'kitchen', 'bathroom'];
 const items = [...PHOTOS].sort((a, b) => order.indexOf(a.group) - order.indexOf(b.group)).map((p) => p.id);
 // the mosaic below the strip: a few photos at mixed sizes
-const mosaic = ['double-bed', 'living-art', 'kitchen', 'twin-beds', 'bathroom', 'living-tv'];
+const mosaic = ['double-front', 'living-wide', 'kitchen-full', 'twin-front', 'bathroom-wide', 'exterior', 'reception', 'living-window', 'dressing-table'];
 ---
 <Layout lang={lang} page="gallery" title={t('meta.gallery.title')} desc={t('meta.gallery.desc')}>
   <section class="section gal-head">

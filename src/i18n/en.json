@@ -1,10 +1,10 @@
 {
   "meta": {
-    "home": { "title": "Katara Suites Salalah — furnished suites by Salalah Gardens Mall", "desc": "Katara Suites, Salalah: new furnished suites with a sitting room, kitchen and bedroom, a few minutes' walk from Salalah Gardens Mall. Free parking and Wi‑Fi. Enquire on WhatsApp." },
-    "rooms": { "title": "The suites — Katara Suites Salalah", "desc": "Double and twin suites with a sitting room, kitchen and bathroom, by Salalah Gardens Mall. See the photos and enquire on WhatsApp." },
-    "gallery": { "title": "Photos — Katara Suites Salalah", "desc": "Photos of Katara Suites in Salalah: the bedrooms, sitting rooms, kitchens and bathrooms." },
+    "home": { "title": "Katara Suites Salalah — furnished suites, apartments and rooms by Salalah Gardens Mall", "desc": "Katara Suites, Salalah: new furnished two-bedroom suites, one-bedroom apartments, studios and deluxe rooms, a few minutes' walk from Salalah Gardens Mall. Free parking and Wi‑Fi. Enquire on WhatsApp." },
+    "rooms": { "title": "Suites and rooms — Katara Suites Salalah", "desc": "Two-bedroom suites, one-bedroom apartments, studios and deluxe rooms by Salalah Gardens Mall. See the photos and enquire on WhatsApp." },
+    "gallery": { "title": "Photos — Katara Suites Salalah", "desc": "Photos of Katara Suites in Salalah: the bedrooms, sitting rooms, kitchens, bathrooms, the reception and the building by the mall." },
     "salalah": { "title": "Salalah from Katara Suites — mall, beaches, khareef", "desc": "What is near Katara Suites: Salalah Gardens Mall on foot, the airport, Al Haffa beach, the souq, Wadi Darbat and the khareef hills, with distances." },
-    "enquire": { "title": "Enquire — Katara Suites Salalah", "desc": "Send your dates and suite style to Katara Suites on WhatsApp, or call +968 9147 7727. Al Wadi, Salalah." },
+    "enquire": { "title": "Enquire — Katara Suites Salalah", "desc": "Send your dates and the suite or room you want to Katara Suites on WhatsApp, or call +968 9147 7727. Al Wadi, Salalah." },
     "notfound": { "title": "Page not found — Katara Suites", "desc": "That page does not exist." }
   },
   "nav": {
@@ -18,33 +18,35 @@
     "title": "New furnished suites, a short walk from Salalah Gardens Mall",
     "lead": "A sitting room, a kitchen and a quiet bedroom of your own: for a family holiday, a khareef week or a longer stay.",
     "cta": "Enquire on WhatsApp",
-    "ctaRooms": "See the suites",
+    "ctaRooms": "See the suites and rooms",
     "photoCaption": "The sitting room, curtains drawn"
   },
   "facts": {
-    "street": "By Salalah Gardens Mall", "centre": "Kitchen in every suite", "stays": "Free parking · Wi‑Fi", "reply": "Replies on WhatsApp"
+    "street": "By Salalah Gardens Mall", "centre": "Suites, apartments and rooms", "stays": "Free parking · Wi‑Fi", "reply": "Replies on WhatsApp"
   },
   "sections": {
-    "rooms": "The suites", "why": "What guests mention", "renovation": "A small home", "gallery": "Photos", "reviews": "In guests' words", "salalah": "Salalah from here", "map": "Where we are", "enquire": "Enquire"
+    "rooms": "Suites and rooms", "why": "What guests mention", "renovation": "A small home", "gallery": "Photos", "reviews": "In guests' words", "salalah": "Salalah from here", "map": "Where we are", "enquire": "Enquire"
   },
   "rooms": {
-    "intro": "Every suite has its own sitting room, kitchen and bathroom; they differ in the bedroom. Pick the one that suits you and tell us your dates.",
-    "all": "All suites",
+    "intro": "Each suite has two bedrooms, a sitting room, a kitchen and two bathrooms; the apartments have a bedroom, a sitting room, a kitchen and a bathroom; and there are rooms with a bathroom of their own. Pick what suits you and tell us your dates.",
+    "all": "All suites and rooms",
     "enquireFor": "Enquire about the {room}",
     "stay": "By the night, the week or longer: ask us",
     "bathroom": "Your kitchen",
-    "bathroomText": "A fridge, a gas cooker with an oven and a sink in the larger kitchens, plus a washing machine; a microwave and a dining table in the kitchenettes. Layouts vary from suite to suite, so tell us what you need.",
+    "bathroomText": "A fridge, a gas cooker with an oven, a sink and a washing machine in the suites and apartments; a kettle and a small fridge in the deluxe rooms. Layouts vary from unit to unit, so tell us what you need.",
     "walk": "Walk through",
-    "double": { "name": "Double suite", "short": "One wide bed, sitting room, kitchen", "desc": "A wide double bed with a gold runner, lamps on both sides and a lit panelled headboard wall. Through the door, a sitting room with a cream sofa and a wall-mounted TV behind floor-length curtains, then the kitchen and the bathroom.", "steps": ["The double bed under the lit headboard wall", "The sitting room with the sofa and the TV", "The kitchen: cooker, oven, fridge and washing machine", "The bathroom"] },
-    "twin": { "name": "Twin suite", "short": "Two single beds, sitting room, kitchen", "desc": "Two single beds with gold-trimmed runners and a lamp between them, for friends, colleagues or children. The sitting room has a sofa, glass nesting tables and a woven floor lamp; the kitchenette has a microwave and a small dining table.", "steps": ["Two beds under the lit panelled wall", "The sitting room with the floor lamp", "The kitchenette and the dining table", "The bathroom"] }
+    "suite": { "name": "The suite", "short": "Two bedrooms, sitting room, kitchen, two bathrooms", "desc": "Two bedrooms, one with a wide double bed and one with two single beds, each with its own bathroom. Between them a sitting room with a sofa, an armchair and a wall-mounted TV, and a kitchen with a cooker, an oven, a fridge and a washing machine. For a family or two couples.", "steps": ["The sitting room, with the doors to both bedrooms", "The first bedroom: a wide double bed", "The second bedroom: two single beds", "The kitchen: cooker, oven, fridge and washing machine", "The first bathroom", "The second bathroom"] },
+    "apartment": { "name": "One-bedroom apartment", "short": "Bedroom, sitting room, kitchen, bathroom", "desc": "One bedroom with a double bed under a lit panelled wall, a sitting room with a sofa and a TV, a kitchen with a dining table, and a bathroom. A small home for a couple or a long stay.", "steps": ["The bedroom under the lit headboard wall", "The sitting room with the sofa and the TV", "The kitchen and the dining table", "The bathroom"] },
+    "studio": { "name": "Studio", "short": "Room, living area, bathroom", "desc": "One room with the beds and a TV, a small sitting corner and a bathroom of its own. No kitchen: the mall's cafés and restaurants are a few minutes on foot.", "steps": ["The beds, with the TV in the same room", "The sitting corner by the window", "The bathroom"] },
+    "deluxe": { "name": "Deluxe room", "short": "Room, kitchenette, bathroom", "desc": "A bedroom with a wide double bed and a gold runner, a kitchenette with a kettle and a small fridge, and a bathroom. For one or two guests on a short stay.", "steps": ["The double bed with the gold runner", "The kitchenette: a kettle and a small fridge", "The bathroom"] }
   },
   "why": {
     "clean": { "t": "Clean and new", "d": "“Clean new apartments”, in one guest's words. The suites were renovated recently and it shows." },
     "host": { "t": "A host who answers", "d": "Guests name the host in their reviews. Write on WhatsApp and you deal with a person." },
     "location": { "t": "Walk to the mall", "d": "Salalah Gardens Mall and the Chinese Village are a few minutes on foot; the airport is a short drive." },
-    "kitchen": { "t": "Cook if you like", "d": "Every suite has a kitchen or a kitchenette, so breakfast and late dinners are yours." },
+    "kitchen": { "t": "Cook if you like", "d": "The suites and apartments have a full kitchen with a washing machine; the deluxe rooms a kettle and a fridge. Breakfast and late dinners are yours." },
     "parking": { "t": "Free parking", "d": "Park by the building at no charge: handy for a hire car in khareef." },
-    "wifi": { "t": "Free Wi‑Fi", "d": "In every suite, with a smart TV in the sitting room." }
+    "wifi": { "t": "Free Wi‑Fi", "d": "In every unit, with a smart TV." }
   },
   "renovation": {
     "title": "Not a room: a small home",
@@ -53,8 +55,8 @@
     "captionStairs": "The kitchen"
   },
   "gallery": {
-    "intro": "Swipe through the bedrooms, the sitting rooms and the kitchens.",
-    "all": "All", "roomsFilter": "Bedrooms", "spaces": "Living", "kitchens": "Kitchens", "bathroom": "Bathrooms",
+    "intro": "Swipe through the bedrooms, the sitting rooms, the kitchens, the reception and the building by the mall.",
+    "all": "All", "roomsFilter": "Bedrooms", "spaces": "Living", "kitchens": "Kitchens", "bathroom": "Bathrooms", "building": "Building",
     "counter": "{n} / {total}", "open": "Open photo", "close": "Close", "prev": "Previous photo", "next": "Next photo", "drag": "Drag"
   },
   "reviews": {
@@ -66,10 +68,10 @@
   "khareef": {
     "now": "It's khareef season — Salalah's hills are green and the mist is in.",
     "soon": "Khareef season starts in {days} days.",
-    "later": "Next khareef: late June to early September."
+    "later": "Next khareef: late June to the end of August."
   },
   "salalah": {
-    "intro": "Salalah is the only corner of Arabia with a monsoon. From late June the hills behind the city turn green; the rest of the year it is beaches, frankincense and souqs. From the suites, the mall is a walk and the rest is a short drive.",
+    "intro": "Salalah is the only part of the Arabian Peninsula with a monsoon season in summer: the khareef, from late June to the end of August. The rest of the year it is known for its stunning coast of soft white sand and clear blue water. From the suites, the mall is a walk and the rest is a short drive.",
     "distance": "{km} km", "fromHotel": "from the suites", "byCar": "{min} min by car", "onFoot": "{min} min on foot",
     "directions": "Directions", "howTo": "How to reach us",
     "byAir": "From Salalah Airport: a short taxi ride.", "byBus": "From the bus station: a short taxi ride west.", "byRoad": "By road from Muscat: around 10 hours on the Route 31 highway."
@@ -85,23 +87,23 @@
     "text": "Send the details below to Katara Suites on WhatsApp. Replies come in English or Arabic.",
     "note": "We're a few minutes' walk from Salalah Gardens Mall. Write with your dates and how many of you there are, and we'll come back to you on WhatsApp with what's free.",
     "noteSign": "Katara Suites, Salalah",
-    "stayType": "Stay", "daily": "Nights", "monthly": "Monthly", "yearly": "Yearly",
+    "stayType": "Stay", "daily": "Nights", "monthly": "Monthly",
     "checkin": "Check-in", "checkout": "Check-out", "movein": "Move-in date", "duration": "How long",
-    "months": "{n} months", "years": "{n} years",
+    "months": "{n} months",
     "nights": "{n} nights", "night": "1 night",
-    "room": "Suite", "roomAny": "Any — advise me",
+    "room": "Suite or room", "roomAny": "Any — advise me",
     "adults": "Adults", "children": "Children",
     "name": "Your name", "phone": "Your phone (with country code)", "reply": "Reply by", "replyWa": "WhatsApp", "replyCall": "Call", "replyEmail": "Email",
-    "email": "Your email", "message": "Anything else", "messagePh": "Arrival time, a cot for the baby, a ground-floor suite…",
+    "email": "Your email", "message": "Anything else", "messagePh": "Arrival time, a cot for the baby, a ground-floor unit…",
     "send": "Send on WhatsApp", "copy": "Copy message", "copied": "Copied", "callInstead": "or call {phone}",
     "errDates": "Check-out must be after check-in.", "errPast": "Pick a date from today on.", "errName": "Please tell us your name.", "errPhone": "Please enter a phone number with the country code.",
     "waIntro": "Hello Katara Suites, I'd like to enquire about a stay.",
-    "waStay": "Stay", "waRoom": "Suite", "waGuests": "Guests", "waName": "Name", "waPhone": "Phone", "waReply": "Reply by", "waNote": "Note", "waFrom": "Sent from the website"
+    "waStay": "Stay", "waRoom": "Suite or room", "waGuests": "Guests", "waName": "Name", "waPhone": "Phone", "waReply": "Reply by", "waNote": "Note", "waFrom": "Sent from the website"
   },
   "footer": {
     "address": "Al Wadi, by Salalah Gardens Mall, Salalah, Dhofar, Sultanate of Oman",
-    "rights": "Katara Suites, Salalah", "made": "Website", "maps": "Google Maps"
+    "rights": "Katara Suites, Salalah", "made": "Website", "maps": "Google Maps", "instagram": "Instagram"
   },
-  "notfound": { "title": "This page is not here", "text": "The link may be old. The suites, photos and the enquiry form are one tap away.", "home": "Back to the start" },
+  "notfound": { "title": "This page is not here", "text": "The link may be old. The suites and rooms, the photos and the enquiry form are one tap away.", "home": "Back to the start" },
   "common": { "photoOf": "Photo of {what}", "section": "Section", "back": "Back" }
 }

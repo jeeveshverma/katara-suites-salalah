@@ -13,11 +13,16 @@ phone +968 9147 7727, the photos, the review lines) and the Booking.com listing 
 free Wi‑Fi, recently renovated). The Google score (4.5 from 17) and the Booking.com score (9.1 from
 16) are shown, as of 2026-10-22 (`SITE.scores`). **No prices, unit counts or check-in times.**
 
+**From the owner (WhatsApp feedback, 2026-10-22):** the four unit types — suite (two bedrooms,
+sitting room, kitchen, two bathrooms), one-bedroom apartment, studio (room, living area, bathroom)
+and deluxe room (room, kitchenette, bathroom) — and the suites intro and "Salalah from here"
+paragraphs in Arabic; stays are by the night or the month only; Instagram is @katara.suites;
+29 photos are the owner's own (`src/assets/photos/`, catalogued in `src/data/photos.ts`).
+
 **Provisional until the owner confirms:**
-- The two suite styles (double, twin) are read from the photos; every suite is described as having
-  a sitting room, a kitchen or kitchenette and a bathroom.
-- The WhatsApp number is the Google listing phone.
-- The seven photos are the listing's own Google Maps photos (placeholders until originals arrive).
+- Which photo shows which unit type (`ROOMS` in `src/data/site.ts`) is read from the photos.
+- Four photos (`double-bed`, `living-art`, `kitchen`, `bathroom`) are still the listing's Google
+  Maps photos.
 - There was no website and no domain for the property on 2026-10-22, so it lives on GitHub Pages.
 
 ## Where things live
@@ -25,7 +30,7 @@ free Wi‑Fi, recently renovated). The Google score (4.5 from 17) and the Bookin
 | What | Where |
 |---|---|
 | Facts: name, phone, WhatsApp number, pin, scores | `src/data/site.ts` |
-| Suite styles and which photos belong to each | `src/data/site.ts` (`ROOMS`) |
+| Unit types, their amenities and which photos belong to each | `src/data/site.ts` (`ROOMS`) |
 | Photo catalogue: group, alt text EN/AR, captions | `src/data/photos.ts` |
 | Landmarks with coordinates (distances are computed) | `src/data/places.ts` |
 | Google review lines (verbatim) | `src/data/reviews.ts` |

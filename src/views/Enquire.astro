@@ -27,9 +27,10 @@ const { t } = useT(lang);
         <ul class="enq-contacts rv">
           <li><Icon name="whatsapp" size={18} /> <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noopener">{t('nav.whatsapp')}</a></li>
           <li><Icon name="phone" size={18} /> <a href={telUrl}><bdi dir="ltr">{SITE.phoneDisplay}</bdi></a></li>
+          <li><Icon name="instagram" size={18} /> <a href={SITE.instagramUrl} target="_blank" rel="noopener"><bdi dir="ltr">@{SITE.instagram}</bdi></a></li>
           <li><Icon name="pin" size={18} /> <a href={SITE.mapsUrl} target="_blank" rel="noopener">{t('footer.address')}</a></li>
         </ul>
-        <div class="enq-photo frame rv"><Img id="living-art" lang={lang} ratio="4 / 3" sizes="(min-width: 960px) 40vw, 100vw" /></div>
+        <div class="enq-photo frame rv"><Img id="reception" lang={lang} ratio="4 / 3" sizes="(min-width: 960px) 40vw, 100vw" /></div>
       </div>
       <div class="enq-form rv rv-d1">
         <EnquiryForm lang={lang} />

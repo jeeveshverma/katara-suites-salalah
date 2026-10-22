@@ -35,7 +35,7 @@ const hotel = {
   address: { '@type': 'PostalAddress', streetAddress: SITE.street.en, addressLocality: SITE.city.en, addressRegion: SITE.region.en, postalCode: SITE.postal, addressCountry: 'OM' },
   geo: { '@type': 'GeoCoordinates', latitude: SITE.geo.lat, longitude: SITE.geo.lng },
   hasMap: SITE.mapsUrl,
-  sameAs: [SITE.mapsUrl, SITE.bookingUrl],
+  sameAs: [SITE.mapsUrl, SITE.bookingUrl, SITE.instagramUrl],
   availableLanguage: ['en', 'ar'],
   aggregateRating: { '@type': 'AggregateRating', ratingValue: SITE.scores.google.score, bestRating: '5', reviewCount: SITE.scores.google.count },
 };
@@ -118,6 +118,7 @@ const hotel = {
         <p class="eyebrow">{t('nav.enquire')}</p>
         <p><a href={wa} target="_blank" rel="noopener"><Icon name="whatsapp" size={16} /> {t('nav.whatsapp')}</a></p>
         <p><a href={telUrl}><Icon name="phone" size={16} /> <bdi dir="ltr">{SITE.phoneDisplay}</bdi></a></p>
+        <p><a href={SITE.instagramUrl} target="_blank" rel="noopener" aria-label={t('footer.instagram')}><Icon name="instagram" size={16} /> <bdi dir="ltr">@{SITE.instagram}</bdi></a></p>
       </div>
       <div class="ftr-col">
         <p class="eyebrow">{t('nav.menu')}</p>

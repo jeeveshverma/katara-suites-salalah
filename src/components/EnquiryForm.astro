@@ -2,7 +2,8 @@
 /**
  * The enquiry form. No backend: it builds a structured WhatsApp message to the hotel's booking
  * number. Nights computed live, past dates blocked, inline validation, "Copy message" fallback,
- * draft kept in localStorage, room pre-selected from ?room= or the data-room attribute.
+ * draft kept in localStorage, unit pre-selected from ?room= or the data-room attribute. Stays are
+ * by the night or by the month (the owner dropped the yearly option, 2026-10-22).
  */
 import { useT, type Lang } from '../i18n';
 import { SITE, ROOMS } from '../data/site';
@@ -10,7 +11,7 @@ import Icon from './Icon.astro';
 interface Props { lang: Lang; compact?: boolean }
 const { lang, compact = false } = Astro.props;
 const { t } = useT(lang);
-const keys = ['waIntro', 'waStay', 'waRoom', 'waGuests', 'waName', 'waPhone', 'waReply', 'waNote', 'waFrom', 'nights', 'night', 'months', 'years', 'daily', 'monthly', 'yearly', 'adults', 'children', 'replyWa', 'replyCall', 'replyEmail', 'errDates', 'errPast', 'errName', 'errPhone', 'copied', 'copy', 'roomAny'] as const;
+const keys = ['waIntro', 'waStay', 'waRoom', 'waGuests', 'waName', 'waPhone', 'waReply', 'waNote', 'waFrom', 'nights', 'night', 'months', 'daily', 'monthly', 'adults', 'children', 'replyWa', 'replyCall', 'replyEmail', 'errDates', 'errPast', 'errName', 'errPhone', 'copied', 'copy', 'roomAny'] as const;
 const dict = Object.fromEntries(keys.map((k) => [k, t(`enquire.${k}`)]));
 const roomNames = Object.fromEntries(ROOMS.map((r) => [r.id, t(`rooms.${r.id}.name`)]));
 ---
@@ -20,7 +21,6 @@ const roomNames = Object.fromEntries(ROOMS.map((r) => [r.id, t(`rooms.${r.id}.na
     <div class="seg" role="radiogroup">
       <label><input type="radio" name="stay" value="daily" checked /><span>{t('enquire.daily')}</span></label>
       <label><input type="radio" name="stay" value="monthly" /><span>{t('enquire.monthly')}</span></label>
-      <label><input type="radio" name="stay" value="yearly" /><span>{t('enquire.yearly')}</span></label>
     </div>
   </fieldset>
 
@@ -96,14 +96,14 @@ const roomNames = Object.fromEntries(ROOMS.map((r) => [r.id, t(`rooms.${r.id}.na
     const update = () => {
       const m = stay();
       if (m === 'daily') { const n = nights(); nightsEl.textContent = inp.value && out.value && n > 0 ? (n === 1 ? D.night : D.nights.replace('{n}', String(n))) : ''; }
-      else { const n = Number(dur.value); nightsEl.textContent = (m === 'monthly' ? D.months : D.years).replace('{n}', String(n)); }
+      else { const n = Number(dur.value); nightsEl.textContent = D.months.replace('{n}', String(n)); }
       q<HTMLElement>('.enq-email').hidden = form.querySelector<HTMLInputElement>('[name=reply]:checked')?.value !== 'email';
       save();
     };
     const stayLine = () => {
       const m = stay();
       if (m === 'daily') { const n = nights(); return `${fmt(inp.value)} → ${fmt(out.value)} (${n === 1 ? D.night : D.nights.replace('{n}', String(n))})`; }
-      const n = Number(dur.value); return `${D[m]} · ${fmt(inp.value)} · ${(m === 'monthly' ? D.months : D.years).replace('{n}', String(n))}`;
+      const n = Number(dur.value); return `${D.monthly} · ${fmt(inp.value)} · ${D.months.replace('{n}', String(n))}`;
     };
     const validate = () => {
       let ok = true;
