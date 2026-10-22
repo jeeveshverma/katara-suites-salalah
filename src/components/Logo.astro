@@ -1,0 +1,49 @@
+---
+/**
+ * The Katara Suites mark: an Omani pointed arch with an inner doorway, a keystone diamond and
+ * the baseline — drawn for this site (the property has no published logo). `lockup` adds the
+ * wordmark as live text.
+ */
+import type { Lang } from '../i18n';
+interface Props { variant?: 'mark' | 'lockup' | 'stack'; lang?: Lang; size?: number; class?: string; title?: string }
+const { variant = 'mark', lang = 'en', size = 40, class: cls = '', title = 'Katara Suites Salalah' } = Astro.props;
+---
+{variant === 'mark' && (
+  <svg class={`logo-mark ${cls}`} width={size * 0.84} height={size} viewBox="0 0 84 100" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label={title}>
+    <path d="M14 92V46Q14 18 42 6Q70 18 70 46V92" />
+    <path d="M26 92V52Q26 32 42 22Q58 32 58 52V92" />
+    <path d="M42 36l5 7-5 7-5-7z" fill="currentColor" stroke="none" />
+    <path d="M26 66h32" stroke-width="1.6" />
+    <path d="M4 92h76" />
+  </svg>
+)}
+{variant === 'lockup' && (
+  <span class={`logo-lockup ${cls}`} style={`--s:${size}px`}>
+    <Astro.self variant="mark" size={size} title={title} />
+    <span class="logo-words">
+      <span class="logo-name">{lang === 'ar' ? 'كتارا' : 'Katara'}</span>
+      <span class="logo-sub">{lang === 'ar' ? 'أجنحة' : 'Suites'}</span>
+    </span>
+  </span>
+)}
+{variant === 'stack' && (
+  <span class={`logo-stack ${cls}`}>
+    <Astro.self variant="mark" size={size} title={title} />
+    <span class="logo-name">{lang === 'ar' ? 'أجنحة كتارا' : 'Katara'}</span>
+    <span class="logo-sub">{lang === 'ar' ? 'Katara Suites' : 'Suites · Salalah'}</span>
+  </span>
+)}
+
+<style>
+  .logo-mark { color: var(--gold); flex: none; }
+  .logo-lockup { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; }
+  .logo-words { display: grid; line-height: 1; }
+  .logo-name { font-family: 'Marcellus', Georgia, serif; font-weight: 400; font-size: calc(var(--s, 40px) * 0.6); letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); }
+  html[lang='ar'] .logo-name { font-family: 'Reem Kufi', sans-serif; text-transform: none; letter-spacing: 0; font-size: calc(var(--s, 40px) * 0.66); font-weight: 500; }
+  .logo-sub { font-family: var(--sans); font-size: calc(var(--s, 40px) * 0.24); letter-spacing: 0.34em; text-transform: uppercase; color: var(--gold-text); margin-top: 5px; display: flex; align-items: center; gap: 8px; }
+  html[lang='ar'] .logo-sub { letter-spacing: 0.1em; font-size: calc(var(--s, 40px) * 0.3); }
+  .logo-sub::before, .logo-sub::after { content: ''; height: 1px; width: 10px; background: var(--gold); opacity: 0.7; }
+  .logo-stack { display: inline-grid; justify-items: center; gap: 10px; text-align: center; color: var(--ink); text-decoration: none; }
+  .logo-stack .logo-name { font-size: 2rem; }
+  .logo-stack .logo-sub { font-size: 0.72rem; }
+</style>
