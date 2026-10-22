@@ -132,7 +132,7 @@ html[lang='ar'] .eyebrow { letter-spacing: 0; font-size: 0.95rem; }
   padding: 10px var(--gutter) calc(10px + env(safe-area-inset-bottom)); background: rgba(251, 248, 243, 0.92); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
   border-top: 1px solid var(--line); transform: translateY(110%); transition: transform 0.4s var(--ease); }
 .stick.show { transform: none; }
-.stick .btn { min-height: 48px; }
+.stick .btn { min-height: 48px; white-space: nowrap; }
 .stick .ic { width: 48px; padding: 0; background: var(--paper); border-color: var(--line); color: var(--ink); }
 @media (min-width: 960px) { .stick { display: none; } }
 body.has-stick { padding-bottom: 76px; }

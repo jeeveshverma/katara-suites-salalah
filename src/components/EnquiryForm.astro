@@ -68,7 +68,7 @@ const roomNames = Object.fromEntries(ROOMS.map((r) => [r.id, t(`rooms.${r.id}.na
     <button type="submit" class="btn btn-wa btn-lg"><Icon name="whatsapp" /> {t('enquire.send')}</button>
     <button type="button" class="btn btn-gold" data-copy><Icon name="copy" size={18} /> <span>{t('enquire.copy')}</span></button>
   </div>
-  <p class="small muted enq-call">{t('enquire.callInstead', { phone: '' })} <a href={`tel:${SITE.phone}`}>{SITE.phoneDisplay}</a></p>
+  <p class="small muted enq-call">{t('enquire.callInstead', { phone: '' })} <a href={`tel:${SITE.phone}`}><bdi dir="ltr">{SITE.phoneDisplay}</bdi></a></p>
 </form>
 
 <script>

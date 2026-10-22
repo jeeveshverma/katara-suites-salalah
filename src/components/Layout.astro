@@ -87,7 +87,7 @@ const hotel = {
         </ul>
         <div class="nav-foot">
           <a class="btn btn-wa" href={wa} target="_blank" rel="noopener"><Icon name="whatsapp" /> {t('hero.cta')}</a>
-          <a class="btn btn-gold" href={telUrl}><Icon name="phone" /> {SITE.phoneDisplay}</a>
+          <a class="btn btn-gold" href={telUrl}><Icon name="phone" /> <bdi dir="ltr">{SITE.phoneDisplay}</bdi></a>
         </div>
       </nav>
       <div class="hdr-actions">
@@ -117,7 +117,7 @@ const hotel = {
       <div class="ftr-col">
         <p class="eyebrow">{t('nav.enquire')}</p>
         <p><a href={wa} target="_blank" rel="noopener"><Icon name="whatsapp" size={16} /> {t('nav.whatsapp')}</a></p>
-        <p><a href={telUrl}><Icon name="phone" size={16} /> {SITE.phoneDisplay}</a></p>
+        <p><a href={telUrl}><Icon name="phone" size={16} /> <bdi dir="ltr">{SITE.phoneDisplay}</bdi></a></p>
       </div>
       <div class="ftr-col">
         <p class="eyebrow">{t('nav.menu')}</p>
@@ -134,7 +134,7 @@ const hotel = {
   </footer>
 
   <div class="stick" id="stick">
-    <a class="btn btn-wa" href={wa} target="_blank" rel="noopener"><Icon name="whatsapp" /> {t('hero.cta')}</a>
+    <a class="btn btn-wa" href={wa} target="_blank" rel="noopener"><Icon name="whatsapp" /> {t('nav.enquire')}</a>
     <a class="btn ic" href={telUrl} aria-label={t('nav.call')}><Icon name="phone" /></a>
     <a class="btn ic" href={path(lang, 'gallery')} aria-label={t('nav.gallery')}><Icon name="arrowUpRight" /></a>
   </div>
